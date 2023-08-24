@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title text-center">Login</h3>
+        </div>
+        <div class="card-body">
+          <form id="loginForm">
+            <div class="form-group">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                required="required"
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label htmlFor="password">Senha:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                required="required"
+              />
+            </div>
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg btn-block mt-3 mb-5"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+          <label htmlFor="cadastar"> Caso não tenha cadastro clique em: </label>
+          <div class="form-group mt-2">
+            <a
+              href="./register.html"
+              class="btn btn-secondary btn-sm active"
+              role="button"
+              aria-pressed="true"
+              id="cadastrar"
+            >
+              Cadastrar-se
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

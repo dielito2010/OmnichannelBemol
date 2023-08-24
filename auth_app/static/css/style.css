@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.nav {
+  background: #0086ff;
+}
+.logo {
+  margin: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.conteudoFooter {
+  min-width: 410px;
+  color: #565656;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+}

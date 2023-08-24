@@ -1,0 +1,152 @@
+{% extends 'base.html' %} {% block content %}
+<!--{% load static %}-->
+{% if messages %} {% for m in messages %}
+<div
+  style="
+    background-color: red;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+  "
+>
+  {{ m }}
+</div>
+<br />
+{% endfor %} {% endif %}
+<div class="App">
+  <div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title text-center">Registre-se conosco</h3>
+          </div>
+          <div class="card-body">
+            <form
+              id="createUserForm"
+              action="{%  url 'register' %}"
+              method="POST"
+            >
+              {% csrf_token %}
+              <div class="form-group">
+                <label htmlFor="nome">*Nome:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  name="nome"
+                  required="required"
+                />
+              </div>
+              <div class="form-group">
+                <label htmlFor="sobrenome">*Sobrenome:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sobrenome"
+                  name="sobrenome"
+                  required="required"
+                />
+              </div>
+              <div class="form-group mt-5">
+                <label htmlFor="cep">*CEP (digite somente os 8 números)</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cep"
+                    name="cep"
+                    pattern="[0-9]+$"
+                    maxlength="8"
+                    minlength="8"
+                    aria-label="Recipient's username"
+                    aria-describedby="button-addon2"
+                    required="required"
+                    onblur="pesquisacep(this.value);"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    Buscar
+                  </button>
+                </div>
+                <div class="form-group">
+                  <label htmlFor="rua">Rua:</label>
+                  <input type="text" class="form-control" id="rua" />
+                </div>
+                <div class="form-group">
+                  <label htmlFor="rua">*Número:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="numero"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <label htmlFor="bairro">Bairro:</label>
+                  <input type="text" class="form-control" id="bairro" />
+                </div>
+                <div class="form-group">
+                  <label htmlFor="cidade">Cidade:</label>
+                  <input type="text" class="form-control" id="cidade" />
+                </div>
+                <div class="form-group">
+                  <label htmlFor="uf">UF:</label>
+                  <input type="text" class="form-control" id="uf" />
+                </div>
+              </div>
+              <div class="form-group mt-5">
+                <label htmlFor="email">*Email:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required="required"
+                  onblur="checkIfEmailExists(this.value);"
+                />
+              </div>
+              <div class="form-group mb-2">
+                <label htmlFor="password"
+                  >*Senha (deve ter pelo menos 6 caracteres)</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  required="required"
+                  minlength="6"
+                />
+              </div>
+              <small>*Obrigatórios</small>
+              <div class="form-group">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg btn-block mt-3"
+                >
+                  Cadastrar
+                </button>
+              </div>
+            </form>
+            <div class="form-group mt-5">
+              <a
+                href="./index.html"
+                class="btn btn-secondary btn-sm active"
+                role="button"
+                aria-pressed="true"
+                id="gobacktologin"
+              >
+                Voltar para login
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

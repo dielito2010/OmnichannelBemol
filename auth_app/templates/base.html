@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <title>Bemol site</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a class="logo" href="https://www.bemol.com.br/" target="_blank">
+          <img src="{% static 'img/logo_bemol.svg' %}" alt="BemolLogo" />
+        </a>
+      </nav>
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+    <footer>
+      <div class="conteudoFooter">
+        <small>
+          2023 ~ Desenvolvido por:&nbsp;
+          <a
+            href="https://danielribeiro.dev.br/"
+            target="_blank"
+            title="Click para navegar ao site: danielribeiro.dev.br"
+          >
+            danielribeiro.dev.br
+          </a>
+          &nbsp; para: &nbsp;
+          <a
+            href="https://github.com/dielito2010"
+            target="_blank"
+            title="Click ver o repositório deste site"
+          >
+            GitHub
+          </a>
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>
+<script src="{% static 'js/viacep.js' %}"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+  crossorigin="anonymous"
+></script>
+
