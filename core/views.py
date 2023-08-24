@@ -36,7 +36,7 @@ def login(request):
         user = authenticate(request, username=email, password=password)
         if user:
             auth_login(request, user)
-            return redirect('index')  # Mensagens serão redirecionadas automaticamente
+            return redirect('index')
         else:
             messages.error(request, 'Invalid user or password')
             return render(request, 'login.html')

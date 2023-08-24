@@ -1,15 +1,37 @@
-{% extends 'base.html' %} {% block content %}
-{% if messages %} {% for m in messages %}
-<div
-  style="
-    background-color: green;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-  "
->
-  {{ m }}
-</div>
-<br />
-{% endfor %} {% endif %}
-{% endblock %}
+{% extends 'base.html' %}
+  {% block content %}
+    {% if messages %} 
+      {% for m in messages %}
+        <div
+          style="
+            background-color: green;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+          "
+        >
+          {{ m }}
+        </div>
+              {% endfor %}
+            {% endif %}
+        <br />
+        <div class="card text-center mt-5">
+          <div class="card-header">{{user.get_username}}</div>
+          <div class="card-body">
+            <h5 class="card-title mt-5 mb-5" id="usuario"></h5>
+            <p class="card-text">
+              Aproveite todos os recursos que o site bemol pode oferecer, boas compras!
+            </p>
+            <!--button class="btn btn-danger mt-5">Sair</button-->
+            <a
+              href={% url 'logout' %}
+              class="btn btn-danger mt-5"
+              role="button"
+              aria-pressed="true"
+              id="logout"
+            >
+              Sair
+            </a>
+          </div>
+        </div>
+  {% endblock %}
