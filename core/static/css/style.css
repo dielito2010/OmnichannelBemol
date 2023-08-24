@@ -9,6 +9,7 @@
 .nav {
   background: #0086ff;
 }
+
 .logo {
   margin: auto;
   padding-top: 2rem;
@@ -17,10 +18,20 @@
 
 .conteudoFooter {
   min-width: 410px;
-  color: #565656;
+  background-color: #0086ff;
+  color: white;
   text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-family: inherit;
   font-weight: bold;
+}
+
+small > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+small a:hover {
+  text-decoration: underline;
 }
