@@ -20,13 +20,14 @@
           <h3 class="card-title text-center">Login</h3>
         </div>
         <div class="card-body">
-          <form id="loginForm">
+          <form id="loginForm" method="POST">{% csrf_token %}
             <div class="form-group">
               <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 class="form-control"
                 id="email"
+                name="email"
                 required="required"
               />
             </div>
@@ -36,6 +37,7 @@
                 type="password"
                 class="form-control"
                 id="password"
+                name="password"
                 required="required"
               />
             </div>
@@ -51,7 +53,7 @@
           <label htmlFor="cadastar"> Caso não tenha cadastro clique em: </label>
           <div class="form-group mt-2">
             <a
-              href="./register.html"
+              href={% url 'register' %}
               class="btn btn-secondary btn-sm active"
               role="button"
               aria-pressed="true"

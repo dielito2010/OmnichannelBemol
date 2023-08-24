@@ -1,7 +1,8 @@
-from django.contrib.auth import get_user_model
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth import authenticate, login as auth_login, logout, get_user_model
+from django.contrib.auth.decorators import login_required
 from core.models import User
 
 
@@ -20,19 +21,35 @@ def register(request):
             messages.info(request, "Email already registered")
             return render(request, 'register.html')
         else:
-            # Aqui você pode criar o usuário usando o modelo personalizado de usuário
-            user = User.objects.create_user(username=email, email=email, password=password, first_name=firstname, last_name=lastname, cep=cep)
+            User.objects.create_user(username=email, email=email, password=password, first_name=firstname, last_name=lastname, cep=cep)
             messages.info(request, "User registered successfully")
-            return redirect('login') 
+            return redirect('login')
 
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == "GET":
+        return render(request, 'login.html')
+    else:
+        email = request.POST.get('email')
+        password = request.POST.get('password')
 
+        user = authenticate(request, username=email, password=password)
+        if user:
+            auth_login(request, user)
+            return redirect('index')  # Mensagens serão redirecionadas automaticamente
+        else:
+            messages.error(request, 'Invalid user or password')
+            return render(request, 'login.html')
+
+
+@login_required
 def index(request):
-    return render(request, 'index.html')
+    if request.user.is_authenticated:
+        messages.info(request, 'Successfully, wellcome!')
+        return render(request, 'index.html')
+    return redirect('login')
 
-#@login_required
+@login_required
 def logout(request):
-    #logout_django(request)
+    logout(request)
     return render(request, 'login.html')
