@@ -1,0 +1,42 @@
+@startuml   
+
+!define C4PUML https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/v2.2.0/C4_Container.puml
+
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/v2.2.0/C4_Component.puml
+
+title Diagrama c4model do projeto Omnichannel
+
+Person(client, "Usuário")
+
+Container(bootstrap, "Botstrap", "Seviço de Classes\npara estilização\nde páginas WEB", "") {
+    Component(link, "Link<>", "", "")
+}
+
+Container(render, "Render", "Service Cloud on Render", "") {
+    Container(api, "API", "API service MTV", "Django (Python)") {
+        Component(model, "model", "lógica para estruturar dados", "model.py")
+        Component(view, "view", "formata os dados para exibiçãoI", "views.py")
+        Component(template, "template", "apresenta ou solicita\nvisualmente os dados", "htmls")
+    }
+}
+
+Container(web, "Web", "Aplicação Web", "HTML5, CSS3 e Bootstrap") {
+    Component(ui, "Interface do usuário", "Interface do usuário\nda aplicação web", "index.html") {
+        Component(login, "Tela de login", "Tela de login da aplicação web", "html")
+    }
+}
+
+Container(MongoDB, "Mongo Servidor Cloud", "Banco de dados"){
+    Component(DBemol, "DBemol", "Banco de dados não relacional", "collections")
+}
+
+Container(ViaCep, "API de CEPs", "Busca, valida e envia Ceps"){
+    Component(callback, "Função de retorno", "Recebe uma URL\ne devolve um JSON ")
+}
+
+Rel(client, web, "Interage com\nAcessa interface Web")
+Rel(bootstrap, web, "HTTP")
+Rel(render, MongoDB, "HTTP")
+Rel(ViaCep, web, "HTTP")
+
+@enduml

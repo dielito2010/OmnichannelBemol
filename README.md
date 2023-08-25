@@ -65,7 +65,7 @@ Senhas válidas?
 
 ## 📦 Implantação
 
-Todo projeto roda em servidor backend, pode ser usado localmente ou na nuvem.
+Todo projeto roda em servidor backend que tenha suporte a Python, pode ser usado localmente ou na nuvem.
 
 ## 🛠️ Tecnologias
 

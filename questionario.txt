@@ -1,0 +1,35 @@
+Questões:
+Responda sucintamente os itens a seguir em um .txt levando as perguntas e as
+respostas para o controle de versão da maneira que julgar mais apropriado:
+
+1. A solução deve ser disponibilizada em Cloud ou On-premise?
+    Depende da política de acesso adotada pela empresa. Como se trata de uma tela de login,
+possivelmente, se os usuários forem funcionários, pode ser disponibilizada localmente
+(On-premise), caso sejam clientes, a opção em nuvem (Cloud) seria mais interessante.
+
+
+2. Considerando a participação de 4 pessoas técnicas para o desenvolvimento dessa solução,
+responda qual ferramenta acreditas ser apropriada para o controle de tarefas da equipe,
+a ferramenta é ágil?
+    Um framework como Scrum/Kanban seria apropriado, e para o controle de tarefas,
+ferramentas como Jira ou ClickUp poderiam ser utilizadas. Essas ferramentas são ágeis
+e eficazes para a gestão de projetos.
+
+
+3. Você se sente capaz de liderar esta equipe? Por quê?
+    Sim, tenho experiência como Analista e habilidade para negociar demandas. No entanto,
+não tenho ambição por cargos de gestão. Prefiro focar no autogerenciamento, que é uma
+habilidade essencial para um desenvolvedor.
+
+
+4. Se pudesse sugerir uma melhoria, mudança ou oportunidade. O que seria?
+    Atualmente, ela apenas registra usuários, mas para um canal único, é importante implementar
+recursos de mensageria, microserviços, APIs, entre outros. Também adicionei um campo no banco de
+dados para registrar o ID da interface usada no cadastro, porém, isso precisa ser mapeado como
+uma regra de negócio.
+
+
+5. Acha válido esse desafio para o processo que está participando?
+    Sim, acredito que este desafio seja válido. Embora a stack de tecnologias tenha sido deixada
+livre para o desenvolvedor, busquei desenvolver a solução alinhada com os requisitos da vaga
+para a qual estou participando no processo seletivo.
