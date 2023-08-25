@@ -63,35 +63,35 @@ AUTH_USER_MODEL = 'core.User'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-name = os.environ.get('DATABASE_NAME')
+name = 'DBemol'
 host = os.environ.get('DATABASE_URL')
 username = 'admin'
 password = os.environ.get('DATABASE_PASSWORD')
 
 #base in Atlas
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'CLIENT': {
-#             'name': name,
-#             'host': host,
-#             'username': username,
-#             'password': password,
-#             'authMechanism': 'SCRAM-SHA-1',
-#         },
-#     }
-# }
-#base local
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': name,
-        'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'localhost',
+            'name': name,
+            'host': host,
+            'username': username,
+            'password': password,
+            'authMechanism': 'SCRAM-SHA-1',
         },
     }
 }
+#base local
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': name,
+#         'ENFORCE_SCHEMA': False,
+#         'CLIENT': {
+#             'host': 'localhost',
+#         },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

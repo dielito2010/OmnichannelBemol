@@ -12,15 +12,15 @@ git clone https://github.com/dielito2010/OmnichannelBemol.git
 
 ### 📋 Pré-requisitos
 
-Node e NPM, verifique qual o seu sistema operacional e instale de acordo...
+Instalação de requirements.txt
 
-
-https://nodejs.org/en/download
-
+```
+pip install -r requirements.txt
+```
 
 ### 🔧 Instalação
 
-pelo terminal, navegue até a pasta backend...
+pelo terminal, navegue até a pasta backend
 
 ```
 cd bemol_challenge
@@ -32,7 +32,7 @@ instale as dependencias com o comando "npm i"
 npm i
 ```
 
-## ⚙️ Executando os testes
+## ⚙️ Executando os testes de usabilidade
 
 ainda na pasta backend execulte a API com o comando "npm run start"
 
@@ -77,20 +77,16 @@ Senhas válidas?
 A API de backend precisa estar rodando em um computador ou em servidor na nuvem,
 o frontend basta ter o projeto no seu dispositivo e executar diretamente no navegador.
 
-## 🛠️ Construído com
+## 🛠️ Tecnologias
 
-* [html5](https://www.w3schools.com/html/) - HTML5
-* [css3](https://www.w3schools.com/Css/) - CSS3
-* [javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - JavaScript Vanilla
-* [node](https://nodejs.org/) - O motor javascript para backend.
-* [express](https://expressjs.com/pt-br/) - framework para aplicativo da web do Node.js
-* [mongoDB](https://www.mongodb.com/) - Banco de dados não relacional para salvar dados de usuário na nuvem.
-* [bootstrap](https://getbootstrap.com/) - framework para estilizar páginas e componentes web.
-* [jquery](https://jquery.com/) - biblioteca para manipulação de documentos HTML e manipulação de eventos.
-* [ajax](https://api.jquery.com/Jquery.ajax/) - modelo que comtempla várias tecnologias web.
-* [mongoose](https://mongoosejs.com/) - solução e baseada em esquemas para modelar dados para aplicativo usando mongoDB.
-* [firebase](https://firebase.google.com/?hl=pt-br) - plataforma de desenvolvimento, usei para gerenciar altenticações.
-* [viacep](https://viacep.com.br/) - API web para buscar e validar ceps.
+* [HTML5](https://www.w3schools.com/html/) - HTML5
+* [CSS3](https://www.w3schools.com/Css/) - CSS3
+* [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Linguagem JavaScript Vanilla.
+* [Python](https://www.python.org/downloads/) - Linguagem Python
+* [MongoDB](https://www.mongodb.com/) - Banco de dados não relacional para salvar dados de usuário na nuvem.
+* [Bootstrap](https://getbootstrap.com/) - framework para estilizar páginas e componentes web.
+* [Django](https://www.djangoproject.com/) - Django é uma estrutura web Python de alto nível que incentiva o desenvolvimento rápido.
+* [Viacep](https://viacep.com.br/) - API web para buscar e validar ceps.
 
 
 ## 📌 Versão
