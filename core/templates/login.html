@@ -1,17 +1,18 @@
 {% extends 'base.html' %} {% block content %}
-{% if messages %} {% for m in messages %}
-<div
-  style="
-    background-color: red;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-  "
->
-  {{ m }}
-</div>
-<br />
-{% endfor %} {% endif %}
+{% if messages %}
+  {% for message in messages %}
+    <div
+      {% if message.level_tag == 'error' %}
+        style="background-color: red; font-size: 20px; color: white; text-align: center;"
+      {% elif message.level_tag == 'info' %}
+        style="background-color: green; font-size: 20px; color: white; text-align: center;"
+      {% endif %}
+    >
+      {{ message }}
+    </div>
+    <br />
+  {% endfor %}
+{% endif %}
 <div class="container mt-5 mb-5">
   <div class="row justify-content-center">
     <div class="col-lg-6">

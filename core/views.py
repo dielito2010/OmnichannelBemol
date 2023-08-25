@@ -1,7 +1,6 @@
-from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate, login as auth_login, logout, get_user_model
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.decorators import login_required
 from core.models import User
 
@@ -12,17 +11,21 @@ def register(request):
     else:
         firstname = request.POST.get('nome')
         lastname = request.POST.get('sobrenome')
+        cpf = request.POST.get('cpf')
         cep = request.POST.get('cep')
+        address_number = request.POST.get('numero')
         email = request.POST.get('email')
         password = request.POST.get('password')
 
         email_exists = User.objects.filter(email=email).exists()
         if email_exists:
-            messages.info(request, "Email already registered")
+            messages.error(request, "Email já está cadastrado!")
             return render(request, 'register.html')
         else:
-            User.objects.create_user(username=email, email=email, password=password, first_name=firstname, last_name=lastname, cep=cep)
-            messages.info(request, "User registered successfully")
+            User.objects.create_user(username=email, email=email, password=password,
+                                     first_name=firstname, last_name=lastname, cpf=cpf,
+                                     cep=cep, address_number=address_number)
+            messages.info(request, "Cadastrado com sucesso, agora só fazer o login ;-)")
             return redirect('login')
 
 
@@ -38,14 +41,14 @@ def login(request):
             auth_login(request, user)
             return redirect('index')
         else:
-            messages.error(request, 'Invalid user or password')
+            messages.error(request, 'Email ou senha inválidos!')
             return render(request, 'login.html')
 
 
 @login_required
 def index(request):
     if request.user.is_authenticated:
-        messages.info(request, 'Successfully, wellcome!')
+        messages.info(request, 'Bem vindo!')
         return render(request, 'index.html')
     return redirect('login')
 
