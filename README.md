@@ -14,10 +14,14 @@ git clone https://github.com/dielito2010/OmnichannelBemol.git
 
 Python3 com pip instalados, verifique conforme seu sistema operacional
 
+```
+cd OmnichannelBemol
+```
+
 Instalação de requirements.txt
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### 🔧 Instalação
@@ -26,9 +30,6 @@ O Banco de dados mongo está na nuvem, caso queira usar, precisa criar as variav
 
 Caso queira usar o banco local, precisa ter MongoDB instalado e com status ativo, vá em Ominichannel/settings.py tem configurações comentadas, só trocar de nuvem para local.
 
-```
-cd Ominichannel
-```
 ```
 python3 manage.py makemigrations
 ```
